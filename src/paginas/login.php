@@ -10,7 +10,7 @@ if (isset($_SESSION['usuario_id'])) {
 
 // Inclui a conexão com o banco (necessário para processar o form)
 // O caminho é relativo ao index.php, que é quem "chama" este arquivo.
-require_once 'includes/db_connect.php'; 
+require_once __DIR__ . '/../includes/db_connect.php'; 
 
 $erro = '';
 

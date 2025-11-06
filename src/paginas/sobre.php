@@ -1,17 +1,16 @@
 <?php
-// paginas/sobre.php
-// Esta página é simples, é principalmente HTML estático.
+// sobre.php
 ?>
 
 <section class="pagina-sobre">
     <h1>Sobre Nós</h1>
-    <p class="subtitulo">Conheça a história e a missão do PetShop Online.</p>
+    <p class="subtitulo">Conheça a história e a missão do LePet.</p>
 
     <div class="sobre-conteudo">
         <div class="texto-sobre">
             <h2>Nossa História</h2>
             <p>
-                Bem-vindo ao PetShop Online! Nascemos em [Ano de Fundação] a partir de um amor incondicional por animais. O que começou como um pequeno sonho de [Seu Nome ou Nome do Fundador] de facilitar a vida dos pais de pet, hoje se tornou um dos principais destinos online para produtos, serviços e cuidados animais.
+                Bem-vindo ao LePet! Nascemos em 2025 a partir de um amor incondicional por animais. O que começou como um pequeno sonho de Letícia de facilitar a vida dos pais de pet, hoje se tornou um dos principais destinos online para produtos, serviços e cuidados animais.
             </p>
             <p>
                 Percebemos que, na correria do dia a dia, muitas vezes faltava tempo para buscar a melhor ração, o brinquedo ideal ou agendar um banho de qualidade. Nosso objetivo sempre foi claro: criar uma plataforma completa onde você encontra tudo que seu melhor amigo precisa, com a confiança e o carinho que ele merece.
@@ -19,7 +18,7 @@
 
             <h2>Nossa Missão</h2>
             <p>
-                Nossa missão é simples: **promover a saúde e a felicidade dos pets e a tranquilidade de seus donos.** Fazemos isso oferecendo uma seleção rigorosa de produtos das melhores marcas, uma equipe de profissionais de banho e tosa apaixonada pelo que faz e um atendimento ao cliente sempre pronto para ajudar.
+                Nossa missão é simples: <strong>promover a saúde e a felicidade dos pets e a tranquilidade de seus donos.</strong> Fazemos isso oferecendo uma seleção rigorosa de produtos das melhores marcas, uma equipe de profissionais de banho e tosa apaixonada pelo que faz e um atendimento ao cliente sempre pronto para ajudar.
             </p>
 
             <h2>Nossos Valores</h2>

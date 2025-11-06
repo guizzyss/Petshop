@@ -7,6 +7,6 @@
         </div>
     </footer>
     
-    <script src="src/assets/js/script.js"></script>
+    <script src="/Petshop/src/assets/js/script.js"></script>
 </body>
 </html>

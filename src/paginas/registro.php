@@ -1,6 +1,6 @@
 <?php
 // paginas/registro.php
-require_once 'includes/db_connect.php'; // $pdo
+require_once __DIR__ . '/../includes/db_connect.php'; // $pdo
 
 $erro = '';
 $sucesso = '';

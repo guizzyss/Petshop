@@ -17,6 +17,17 @@ session_destroy();
  * Usamos '../index.php' porque este arquivo está na pasta 'paginas'
  * e o index.php está um nível acima (na pasta 'src')
  */
-header("Location: ../index.php?pagina=home");
-exit; // Garante que o script pare aqui
+$redirect = '../index.php';
+if (!file_exists(__DIR__ . '/../index.php')) {
+    if (file_exists(__DIR__ . '/../../index.php')) {
+        $redirect = '../../index.php';
+    } else {
+        // fallback para a raiz do site se não encontrar index.php nos caminhos relativos
+        $redirect = '/';
+    }
+}
+
+// Garante que o script pare aqui após redirecionamento
+header('Location: ' . $redirect);
+exit;
 ?>

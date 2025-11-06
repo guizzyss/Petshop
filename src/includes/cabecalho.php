@@ -16,13 +16,12 @@ $nome_usuario = $_SESSION['usuario_nome'] ?? '';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetShop Online</title>
 
-    <!-- Caminho ajustado para funcionar com index.php na raiz -->
-    <link rel="stylesheet" href="src/assets/css/styles.css">
+    <link rel="stylesheet" href="/Petshop/src/assets/css/styles.css">
 </head>
 <body>
     <header class="navbar">
         <div class="container">
-            <a href="index.php?pagina=home" class="logo"><strong>PetShop</strong></a>
+            <a href="index.php?pagina=home" class="logo"><strong>LePet</strong></a>
             
             <nav>
                 <ul class="nav-links">
@@ -32,7 +31,7 @@ $nome_usuario = $_SESSION['usuario_nome'] ?? '';
 
                     <?php if ($usuario_logado): ?>
                         <li><a href="#">Minha Conta</a></li>
-                        <li><a href="src/paginas/logout.php" class="nav-botao">
+                        <li><a href="/Petshop/src/paginas/logout.php" class="nav-botao">
                             Sair (<?php echo htmlspecialchars($nome_usuario); ?>)
                         </a></li>
                     <?php else: ?>
