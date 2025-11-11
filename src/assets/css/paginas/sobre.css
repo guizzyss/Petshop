@@ -1,0 +1,57 @@
+/* Estilos específicos para a página Sobre */
+
+.pagina-sobre {
+    /* Torna a página sobre um bloco sólido com sombra para destaque */
+    background-color: var(--cor-fundo-secundaria);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+}
+
+.pagina-sobre .subtitulo {
+    font-size: 1.2rem;
+    color: var(--cor-texto-secundaria);
+    margin-bottom: 30px;
+}
+
+.sobre-conteudo {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.texto-sobre ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.texto-sobre li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+
+.texto-sobre li::before {
+    content: '🐾'; /* Um ícone de patinha */
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--cor-primaria);
+}
+
+.imagem-sobre .placeholder-imagem {
+    background-color: var(--cor-fundo-secundaria);
+    border: 2px dashed var(--cor-borda);
+    padding: 80px 20px;
+    text-align: center;
+    border-radius: 8px;
+    color: var(--cor-texto-secundaria);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .sobre-conteudo {
+        grid-template-columns: 1fr;
+    }
+}

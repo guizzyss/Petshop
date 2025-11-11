@@ -17,6 +17,15 @@ $nome_usuario = $_SESSION['usuario_nome'] ?? '';
     <title>PetShop Online</title>
 
     <link rel="stylesheet" href="/Petshop/src/assets/css/styles.css">
+    <?php
+        // Incluir CSS específico da página, se existir
+        if (isset($pagina)) {
+            $css_pagina = __DIR__ . "/../assets/css/paginas/{$pagina}.css";
+            if (file_exists($css_pagina)) {
+                echo '<link rel="stylesheet" href="/Petshop/src/assets/css/paginas/' . htmlspecialchars($pagina) . '.css">';
+            }
+        }
+    ?>
 </head>
 <body>
     <header class="navbar">
@@ -31,7 +40,7 @@ $nome_usuario = $_SESSION['usuario_nome'] ?? '';
 
                     <?php if ($usuario_logado): ?>
                         <li><a href="#">Minha Conta</a></li>
-                        <li><a href="/Petshop/src/paginas/logout.php" class="nav-botao">
+                        <li><a href="/Petshop/index.php?pagina=logout" class="nav-botao">
                             Sair (<?php echo htmlspecialchars($nome_usuario); ?>)
                         </a></li>
                     <?php else: ?>

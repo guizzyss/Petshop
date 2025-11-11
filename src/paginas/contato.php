@@ -17,19 +17,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php endif; ?>
 
     <form id="form-contato" action="index.php?pagina=contato" method="POST">
-         <div class="form-grupo">
+        <div class="form-grupo">
             <label for="nome">Seu Nome:</label>
             <input type="text" id="nome-contato" name="nome" required>
-        </div>
-         <div class="form-grupo">
+
             <label for="email">Seu E-mail:</label>
             <input type="email" id="email-contato" name="email" required>
-        </div>
-         <div class="form-grupo">
+
             <label for="assunto">Assunto:</label>
             <input type="text" id="assunto-contato" name="assunto" required>
-        </div>
-         <div class="form-grupo">
+
             <label for="mensagem">Mensagem:</label>
             <textarea id="mensagem-contato" name="mensagem" rows="5" required></textarea>
         </div>

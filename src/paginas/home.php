@@ -51,16 +51,15 @@
             <img src="/Petshop/src/assets/img/coleira-pet-nylon.jpg" alt="Coleira para cachorro">
             <h4>Coleira Estilosa</h4>
             <p>Para cães pequenos e médios.</p>
-            <span>R$ 80,00</span>
+            <span>R$ 15,00</span>
         </div>
 
         <div class="card-produto">
             <img src="/Petshop/src/assets/img/shampoo-para-pets.jpg" alt="Shampoo para pets">
             <h4>Shampoo Hipoalergênico</h4>
             <p>Cuidado e carinho para seu pet.</p>
-            <span>R$ 45,00</span>
+            <span>R$ 25,00</span>
         </div>
-  </div>
 </div>
 
 

@@ -2,10 +2,6 @@
 // index.php (Front Controller)
 
 // 1. Incluir o cabeçalho (que já inicia a sessão)
-require_once 'src/includes/cabecalho.php';
-
-// 2. Lógica do Roteador Simples
-
 // Define a página padrão
 $pagina_padrao = 'home';
 
@@ -20,8 +16,18 @@ $paginas_permitidas = [
     'login',
     'registro',
     'contato',
-    // 'logout' não precisa estar aqui, pois é um script direto
+    'logout',
 ];
+
+// Valida a página antes de incluir o cabeçalho
+if (!in_array($pagina, $paginas_permitidas)) {
+    $pagina = $pagina_padrao;
+}
+
+// Agora inclui o cabeçalho com a página definida
+require_once 'src/includes/cabecalho.php';
+
+// 2. Lógica do Roteador Simples
 
 // Constrói o caminho do arquivo da página
 $caminho_pagina = "src/paginas/{$pagina}.php";

@@ -1,0 +1,68 @@
+/* Estilos específicos para a página inicial */
+
+.pagina-home .boas-vindas {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.destaques {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.destaques h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--cor-texto);
+}
+
+.grid-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+}
+
+.card-produto {
+    background-color: var(--cor-fundo-secundaria); /* Usa a cor de card */
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+    padding: 1rem;
+    width: 100%;
+    max-width: 250px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.card-produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.card-produto img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+}
+
+.card-produto h4 {
+    font-size: 1.1rem;
+    margin: 0.3rem 0;
+    color: var(--cor-texto);
+}
+
+.card-produto p {
+    font-size: 0.9rem;
+    color: var(--cor-texto-secundaria);
+    margin-bottom: 0.4rem;
+}
+
+.card-produto span {
+    display: block;
+    font-weight: bold;
+    color: var(--cor-primaria); /* Usando a cor primária para preço */
+    font-size: 1rem;
+}

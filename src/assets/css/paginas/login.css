@@ -1,0 +1,11 @@
+/* Estilos específicos para a página Contato */
+
+.pagina-login {
+    background-color: var(--cor-fundo-secundaria);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+    max-width: 600px;
+    height: fit-content;
+    margin: 0 auto; 
+}

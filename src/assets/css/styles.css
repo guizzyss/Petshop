@@ -9,7 +9,8 @@
     --cor-primaria: #2E7D32;         /* Verde-floresta */
     --cor-primaria-hover: #1B5E20;
     --sombra: 0 2px 4px rgba(0,0,0,0.05);
-    --imagem-fundo-claro: url('../img/fundo-site-claro.png');
+    /* ATENÇÃO: Verifique a extensão correta de suas imagens (jpg ou png) */
+    --imagem-fundo-claro: url('../img/fundo-site-claro.png'); 
     --imagem-fundo-escuro: url('../img/fundo-site-escuro.png');
 }
 
@@ -23,26 +24,28 @@ body.dark-mode {
     --cor-primaria: #66BB6A;         /* Verde-claro (legível no escuro) */
     --cor-primaria-hover: #4CAF50;
     --sombra: 0 2px 4px rgba(0,0,0,0.2);
-}
 
-body.dark-mode {
+    /* Aplica a imagem de fundo escura */
     background-image: var(--imagem-fundo-escuro);
 }
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    color: var(--cor-texto); /* Usa a nova cor de texto */
+    color: var(--cor-texto); 
     line-height: 1.6;
     margin: 0;
     padding-top: 52px;
     transition: background-color 0.3s, color 0.3s, background-image 0.3s;
-    background-color: var(--cor-fundo); /* Cor sólida (fallback) */
-    background-image: var(--imagem-fundo-claro); /* Aplicando o padrão */
-    background-repeat: repeat;       /* Repetir o padrão */
-    background-attachment: fixed;    /* Fundo fica fixo no scroll */
-    background-size: 300px auto;     /* Tamanho do padrão (ajuste se quiser) */
-    background-position: 0 70px; /* Começa abaixo do header */
+    
+    /* CONFIGURAÇÕES DO WALLPAPER DE FUNDO */
+    background-color: var(--cor-fundo); 
+    background-image: var(--imagem-fundo-claro);
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: 300px auto; 
+    background-position: 0 52px; 
 }
+
 .container {
     max-width: 1100px;
     margin: 0 auto;
@@ -71,12 +74,11 @@ body {
     color: var(--cor-primaria);
     font-size: 1.5rem;
     font-weight: bold;
+    transition: color 0.2s;
 }
-
 .logo:hover {
     color: var(--cor-primaria-hover);
 }
-
 .nav-links {
     list-style: none;
     margin: 0;
@@ -134,135 +136,20 @@ body {
     color: var(--cor-texto);
 }
 
-/* --- CONTEÚDO DA PÁGINA --- */
+/* --- CONTEÚDO E ESTRUTURA --- */
 .page-content {
     padding-top: 30px;
     padding-bottom: 30px;
-    min-height: calc(100vh - 140px); /* 70px header + 70px footer */
+    min-height: calc(100vh - 140px); /* 52px header + footer */
 
-    /* --- ISSO GARANTE A LEITURA --- */
-    /* O conteúdo principal terá um fundo SÓLIDO */
-    background-color: var(--cor-fundo);
+    /* O conteúdo principal terá um fundo SÓLIDO para não mostrar o padrão */
+    background-color: var(--cor-fundo); 
     
-    /* Garante que o conteúdo fique "acima" do fundo */
     position: relative; 
     z-index: 1;
 }
-.pagina-home .boas-vindas {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    text-align: center;
-}
 
-.destaques {
-  margin: 3rem 0;
-  text-align: center;
-}
-
-.destaques h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  color: var(--cor-texto);
-}
-
-.grid-produtos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  justify-items: center;
-}
-
-.card-produto {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  padding: 1rem;
-  width: 100%;
-  max-width: 250px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  cursor: pointer;
-}
-
-.card-produto:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-}
-
-.card-produto img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 0.8rem;
-}
-
-.card-produto h4 {
-  font-size: 1.1rem;
-  margin: 0.3rem 0;
-  color: #313131;
-}
-
-.card-produto p {
-  font-size: 0.9rem;
-  color: #575757;
-  margin-bottom: 0.4rem;
-}
-
-.card-produto span {
-  display: block;
-  font-weight: bold;
-  color: #27ae60;
-  font-size: 1rem;
-}
-
-.dashboard-usuario {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.pagina-sobre .subtitulo {
-    font-size: 1.2rem;
-    color: var(--cor-texto-secundaria);
-    margin-bottom: 30px;
-}
-
-.sobre-conteudo {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 30px;
-    align-items: center;
-}
-
-.texto-sobre ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.texto-sobre li {
-    position: relative;
-    padding-left: 25px;
-    margin-bottom: 10px;
-}
-
-.texto-sobre li::before {
-    content: '🐾'; /* Um ícone de patinha */
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: var(--cor-primaria);
-}
-
-.imagem-sobre .placeholder-imagem {
-    background-color: var(--cor-fundo-secundaria);
-    border: 2px dashed var(--cor-borda);
-    padding: 80px 20px;
-    text-align: center;
-    border-radius: 8px;
-    color: var(--cor-texto-secundaria);
-}
-
-/* --- FORMULÁRIOS --- */
+/* --- ESTILOS DE FORMULÁRIO GERAL (Reutilizável) --- */
 .form-grupo {
     margin-bottom: 20px;
 }
@@ -282,15 +169,14 @@ body {
     border-radius: 5px;
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
-    box-sizing: border-box; /* Garante que padding não afete a largura */
+    box-sizing: border-box; 
 }
 .form-grupo .erro-validacao {
-    color: #e74c3c; /* Vermelho */
+    color: #e74c3c; 
     font-size: 0.9em;
-    display: none; /* Oculto por padrão */
+    display: none;
     margin-top: 5px;
 }
-/* Estilo para inputs inválidos (via JS) */
 .form-grupo input.invalido {
     border-color: #e74c3c;
 }
@@ -319,4 +205,23 @@ footer {
     color: var(--cor-texto-secundaria);
     margin-top: 40px;
     height: 50px;
+}
+
+@media (max-width: 600px) {
+    .nav-links li {
+        margin-left: 10px;
+    }
+    .logo {
+        font-size: 1.2rem;
+    }
+    footer {
+        text-align: left;
+        padding: 10px 20px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    .container {
+        padding: 0 15px;
+    }
 }
