@@ -1,21 +1,22 @@
 /* --- GERAL E VARIÁVEIS DE TEMA --- */
-
 :root {
     /* Modo Claro (Padrão) - Natural e Calmo */
-    --cor-fundo: #F9F9F7;            /* Um branco levemente "quente" */
-    --cor-fundo-secundaria: #ffffff;
-    --cor-texto: #202020;            /* Um preto mais suave */
+    --cor-fundo: #F9F9F7;            /* Fundo SÓLIDO do conteúdo */
+    --cor-fundo-secundaria: #ffffff; /* Fundo do header/cards */
+    --cor-texto: #2a2a2a;
     --cor-texto-secundaria: #5f5f5f;
     --cor-borda: #e4e4e4;
-    --cor-primaria: #2E7D32;         /* Verde-floresta (confiável) */
-    --cor-primaria-hover: #1B5E20;   /* Verde mais escuro */
+    --cor-primaria: #2E7D32;         /* Verde-floresta */
+    --cor-primaria-hover: #1B5E20;
     --sombra: 0 2px 4px rgba(0,0,0,0.05);
+    --imagem-fundo-claro: url('../img/fundo-site-claro.png');
+    --imagem-fundo-escuro: url('../img/fundo-site-escuro.png');
 }
 
 body.dark-mode {
     /* Modo Escuro - Natural e Calmo */
-    --cor-fundo: #1e241f;            /* Fundo verde-escuro */
-    --cor-fundo-secundaria: #2a332b;
+    --cor-fundo: #1e241f;            /* Fundo SÓLIDO do conteúdo */
+    --cor-fundo-secundaria: #2a332b; /* Fundo do header/cards */
     --cor-texto: #e8e8e8;
     --cor-texto-secundaria: #aaaaaa;
     --cor-borda: #3b4a3c;
@@ -24,16 +25,24 @@ body.dark-mode {
     --sombra: 0 2px 4px rgba(0,0,0,0.2);
 }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
-    line-height: 1.6;
-    margin: 0;
-    padding-top: 70px; /* Espaço para o header fixo */
-    transition: background-color 0.3s, color 0.3s;
+body.dark-mode {
+    background-image: var(--imagem-fundo-escuro);
 }
 
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--cor-texto); /* Usa a nova cor de texto */
+    line-height: 1.6;
+    margin: 0;
+    padding-top: 52px;
+    transition: background-color 0.3s, color 0.3s, background-image 0.3s;
+    background-color: var(--cor-fundo); /* Cor sólida (fallback) */
+    background-image: var(--imagem-fundo-claro); /* Aplicando o padrão */
+    background-repeat: repeat;       /* Repetir o padrão */
+    background-attachment: fixed;    /* Fundo fica fixo no scroll */
+    background-size: 300px auto;     /* Tamanho do padrão (ajuste se quiser) */
+    background-position: 0 70px; /* Começa abaixo do header */
+}
 .container {
     max-width: 1100px;
     margin: 0 auto;
@@ -130,6 +139,14 @@ body {
     padding-top: 30px;
     padding-bottom: 30px;
     min-height: calc(100vh - 140px); /* 70px header + 70px footer */
+
+    /* --- ISSO GARANTE A LEITURA --- */
+    /* O conteúdo principal terá um fundo SÓLIDO */
+    background-color: var(--cor-fundo);
+    
+    /* Garante que o conteúdo fique "acima" do fundo */
+    position: relative; 
+    z-index: 1;
 }
 .pagina-home .boas-vindas {
     font-size: 1.5rem;
@@ -300,7 +317,6 @@ footer {
     padding: 20px 0;
     border-top: 1px solid var(--cor-borda);
     color: var(--cor-texto-secundaria);
-    margin-top: 20px;
-    height: 70px;
+    margin-top: 40px;
+    height: 50px;
 }
-
