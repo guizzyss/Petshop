@@ -1,0 +1,55 @@
+# .gitignore para projeto web/PHP (XAMPP) - arquivos que não devem ser versionados
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Logs / temp / caches
+*.log
+logs/
+tmp/
+temp/
+.cache/
+.sass-cache/
+coverage/
+npm-debug.log
+yarn-error.log
+
+# Dependências e builds
+/vendor/
+node_modules/
+dist/
+build/
+public/build/
+public/hot
+
+# Arquivos de ambiente/segredo
+.env
+.env.*.local
+.env.local
+.env.backup
+
+# IDEs / editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Arquivos gerados / bancos locais
+*.sqlite
+*.sqlite3
+*.db
+*.sql
+*.lock
+
+# Arquivos PHP/Frameworks
+.phpunit.result.cache
+.php_cs.cache
+storage/
+public/storage/
+uploads/
+
+# Outros
+*.zip
+*.tar.gz
+.Dockerfile.swp
