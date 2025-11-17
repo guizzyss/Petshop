@@ -1,5 +1,5 @@
 <?php
-// paginas/registro.php
+
 require_once __DIR__ . '/../includes/db_connect.php'; // $pdo
 
 $erro = '';
@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $senha = $_POST['senha'] ?? '';
     $senha_confirm = $_POST['senha_confirm'] ?? '';
 
-    // Validações do lado do servidor (essenciais, mesmo com JS)
+    // Validações do lado do servidor
     if (empty($nome) || empty($email) || empty($senha) || empty($senha_confirm)) {
         $erro = "Todos os campos são obrigatórios.";
     } elseif ($senha !== $senha_confirm) {
@@ -22,21 +22,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $erro = "A senha deve ter no mínimo 6 caracteres.";
     } else {
         try {
-            // 1. Verifica se o e-mail já existe
+            // Verifica se o e-mail já existe
             $stmt = $pdo->prepare("SELECT id FROM usuarios WHERE email = ?");
             $stmt->execute([$email]);
             if ($stmt->fetch()) {
                 $erro = "Este e-mail já está cadastrado.";
             } else {
-                // 2. Hash da senha (NUNCA salve senhas em texto puro)
+                // Hash da senha para segurança
                 $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
                 
-                // 3. Insere no banco
+                // Insere no banco
                 $stmt = $pdo->prepare("INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)");
                 $stmt->execute([$nome, $email, $senha_hash]);
                 
                 $sucesso = "Cadastro realizado com sucesso! Você já pode fazer o login.";
-                // (Limpa o post para não repopular o form)
+                // Limpa o post para não repopular o formulário
                 $_POST = [];
             }
         } catch (PDOException $e) {

@@ -1,4 +1,4 @@
-# .gitignore para projeto web/PHP (XAMPP) - arquivos que não devem ser versionados
+#Arquivos e pastas ignorados pelo Git
 
 # Sistema
 .DS_Store

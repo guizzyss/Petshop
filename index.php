@@ -1,7 +1,6 @@
 <?php
-// index.php (Front Controller)
 
-// 1. Incluir o cabeçalho (que já inicia a sessão)
+// Incluir o cabeçalho (que já inicia a sessão)
 // Define a página padrão
 $pagina_padrao = 'home';
 
@@ -24,22 +23,22 @@ if (!in_array($pagina, $paginas_permitidas)) {
     $pagina = $pagina_padrao;
 }
 
-// Agora inclui o cabeçalho com a página definida
+// Inclui o cabeçalho com a página definida
 require_once 'src/includes/cabecalho.php';
 
-// 2. Lógica do Roteador Simples
+// Lógica do Roteador Simples
 
 // Constrói o caminho do arquivo da página
 $caminho_pagina = "src/paginas/{$pagina}.php";
 
-// 3. Carregar a Página
-// Verifica se a página está na lista permitida E se o arquivo realmente existe
+// Carrega a página solicitada ou a página padrão
+// Verifica se a página está na lista permitida e se o arquivo realmente existe
 if (in_array($pagina, $paginas_permitidas) && file_exists($caminho_pagina)) {
     require_once $caminho_pagina;
 } else {
-    // Se a página não for encontrada ou não for permitida, carrega a home
+    // Carrega a home se a página requisitada não for válida
     require_once "src/paginas/{$pagina_padrao}.php";
 }
 
-// 4. Incluir o rodapé
+// Incluir o rodapé
 require_once 'src/includes/rodape.php';

@@ -1,25 +1,24 @@
 // Espera o DOM (estrutura HTML) carregar antes de executar o script
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- 1. LÓGICA DE TROCA DE TEMA (LIGHT/DARK) ---
+// LÓGICA DE TROCA DE TEMA
     
     const themeToggleBtn = document.getElementById('theme-toggle');
     const body = document.body;
-    const themeIcon = themeToggleBtn.firstChild; // Pega o texto (emoji)
+    const themeIcon = themeToggleBtn.firstChild;
 
-    // Função para aplicar o tema (seja salvo ou padrão)
+    // Função para troca de tema
     function aplicarTema(tema) {
         if (tema === 'dark-mode') {
             body.classList.add('dark-mode');
-            themeIcon.textContent = '☀'; // Sol
+            themeIcon.textContent = '☀';
         } else {
             body.classList.remove('dark-mode');
-            themeIcon.textContent = '⏾'; // Lua
+            themeIcon.textContent = '⏾';
         }
     }
 
-    // Verifica a preferência do usuário no localStorage
-    // Se não houver, verifica a preferência do sistema operacional
+    // Verifica se há um tema salvo no localStorage
     const temaSalvo = localStorage.getItem('theme');
     const prefereEscuro = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     
@@ -42,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     
-    // --- 2. LÓGICA DE VALIDAÇÃO DE FORMULÁRIO (EX: REGISTRO) ---
+// LÓGICA PRINCIPAL DE VALIDAÇÃO DO FORMULÁRIO DE REGISTRO
     
     const formRegistro = document.getElementById('form-registro');
 
@@ -50,12 +49,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Encontramos o formulário de registro na página
         
         formRegistro.addEventListener('submit', (event) => {
-            // Impede o envio padrão do formulário para o PHP
-            // Nós só vamos deixar enviar (form.submit()) se a validação passar
+            // Só envia o formulário caso seja validado
             event.preventDefault(); 
             
+            // Valida o formulário
             if (validarFormRegistro()) {
-                // Se a validação do JS passou, envia o formulário
                 formRegistro.submit();
             }
         });
@@ -67,30 +65,30 @@ document.addEventListener('DOMContentLoaded', () => {
         const senhaConfirm = document.getElementById('senha_confirm');
 
         function validarFormRegistro() {
-            let formValido = true; // Começa assumindo que é válido
+            let formValido = true;
             
             // Reseta todos os erros antes de validar de novo
             resetarErros();
 
-            // 1. Valida Nome
+            // Valida o nome
             if (nome.value.trim() === '') {
                 mostrarErro(nome, 'O campo nome é obrigatório.');
                 formValido = false;
             }
 
-            // 2. Valida E-mail
+            // Valida o email
             if (!validarEmail(email.value)) {
                 mostrarErro(email, 'Por favor, insira um e-mail válido.');
                 formValido = false;
             }
 
-            // 3. Valida Senha
+            // Valida a senha
             if (senha.value.length < 6) {
                 mostrarErro(senha, 'A senha deve ter no mínimo 6 caracteres.');
                 formValido = false;
             }
 
-            // 4. Valida Confirmação de Senha
+            // Valida a confirmação de senha
             if (senha.value !== senhaConfirm.value) {
                 mostrarErro(senhaConfirm, 'As senhas não coincidem.');
                 formValido = false;
@@ -102,19 +100,17 @@ document.addEventListener('DOMContentLoaded', () => {
             return formValido;
         }
 
-        // --- Funções Auxiliares de Validação ---
+// FUNÇÕES AUXILIARES DE VALIDAÇÃO
 
         function mostrarErro(input, mensagem) {
-            // Pega o 'form-grupo' (elemento pai)
             const formGrupo = input.parentElement;
-            // Pega o 'span.erro-validacao' dentro dele
             const spanErro = formGrupo.querySelector('.erro-validacao');
             
             if (spanErro) {
                 spanErro.textContent = mensagem;
-                spanErro.style.display = 'block'; // Mostra a mensagem
+                spanErro.style.display = 'block';
             }
-            input.classList.add('invalido'); // Adiciona a borda vermelha (via CSS)
+            input.classList.add('invalido');
         }
 
         function resetarErros() {
@@ -133,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function validarEmail(email) {
-            // Regex simples para validação de e-mail
+            // Validação simples de email
             const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(String(email).toLowerCase());
         }

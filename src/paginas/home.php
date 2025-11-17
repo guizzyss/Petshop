@@ -1,8 +1,4 @@
 <?php
-// paginas/home.php
-
-// A variável $usuario_logado foi definida no 'cabecalho.php'
-// A variável $_SESSION['usuario_nome'] foi definida no 'login.php'
 
 ?>
 <section class="pagina-home">

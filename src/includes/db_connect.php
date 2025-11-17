@@ -1,11 +1,10 @@
 <?php
-// Arquivo de Conexão com o Banco (PDO)
 
 // Configurações do banco de dados
-define('DB_HOST', 'localhost'); // Onde o banco está
-define('DB_NAME', 'petshop'); // O nome do banco que criamos
-define('DB_USER', 'root'); // Seu usuário do MySQL
-define('DB_PASS', ''); // Sua senha do MySQL (deixe vazio se não tiver)
+define('DB_HOST', 'localhost'); // Localização do banco
+define('DB_NAME', 'petshop'); // O nome do banco
+define('DB_USER', 'root'); // Usuário do MySQL
+define('DB_PASS', ''); // Senha do MySQL
 
 try {
     // Cria a conexão PDO

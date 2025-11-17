@@ -1,6 +1,4 @@
 <?php
-// paginas/login.php
-// (A sessão já foi iniciada no cabecalho.php)
 
 // Se o usuário já está logado, redireciona para a home
 if (isset($_SESSION['usuario_id'])) {
@@ -9,12 +7,11 @@ if (isset($_SESSION['usuario_id'])) {
 }
 
 // Inclui a conexão com o banco (necessário para processar o form)
-// O caminho é relativo ao index.php, que é quem "chama" este arquivo.
 require_once __DIR__ . '/../includes/db_connect.php'; 
 
 $erro = '';
 
-// Verifica se o formulário foi enviado (método POST)
+// Verifica se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'] ?? '';
     $senha = $_POST['senha'] ?? '';
@@ -28,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->execute([$email]);
             $usuario = $stmt->fetch();
 
-            // Verifica se o usuário existe E se a senha está correta
+            // Verifica se o usuário existe e se a senha está correta
             if ($usuario && password_verify($senha, $usuario['senha'])) {
                 // Sucesso! Armazena dados na sessão
                 $_SESSION['usuario_id'] = $usuario['id'];

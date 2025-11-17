@@ -1,9 +1,8 @@
 <?php
-// paginas/contato.php
+
 $sucesso = false;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Aqui você colocaria a lógica para ENVIAR o e-mail
-    // Por enquanto, apenas simulamos o sucesso
+    // Aqui você pode processar os dados do formulário, como salvar no banco ou enviar um e-mail
     $sucesso = true;
 }
 ?>

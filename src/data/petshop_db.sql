@@ -12,4 +12,4 @@ CREATE TABLE usuarios (
     email VARCHAR(100) NOT NULL UNIQUE,
     senha VARCHAR(255) NOT NULL,
     data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB;
+) ENGINE=InnoDB; -- Define o mecanismo de armazenamento como InnoDB

@@ -1,5 +1,5 @@
 <?php
-// cabecalho.php
+
 // Inicia a sessão em todas as páginas
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -18,7 +18,7 @@ $nome_usuario = $_SESSION['usuario_nome'] ?? '';
 
     <link rel="stylesheet" href="/Petshop/src/assets/css/styles.css">
     <?php
-        // Incluir CSS específico da página, se existir
+        // Incluir CSS específico da página caso exista
         if (isset($pagina)) {
             $css_pagina = __DIR__ . "/../assets/css/paginas/{$pagina}.css";
             if (file_exists($css_pagina)) {

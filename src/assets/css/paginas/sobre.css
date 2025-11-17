@@ -1,7 +1,4 @@
-/* Estilos específicos para a página Sobre */
-
 .pagina-sobre {
-    /* Torna a página sobre um bloco sólido com sombra para destaque */
     background-color: var(--cor-fundo-secundaria);
     padding: 30px;
     border-radius: 8px;
@@ -33,7 +30,7 @@
 }
 
 .texto-sobre li::before {
-    content: '🐾'; /* Um ícone de patinha */
+    content: '🐾';
     position: absolute;
     left: 0;
     top: 0;
@@ -47,11 +44,4 @@
     text-align: center;
     border-radius: 8px;
     color: var(--cor-texto-secundaria);
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .sobre-conteudo {
-        grid-template-columns: 1fr;
-    }
 }
