@@ -21,7 +21,7 @@ body.dark-mode {
     --cor-primaria: #66BB6A;
     --cor-primaria-hover: #4CAF50;
     --sombra: 0 2px 4px rgba(0,0,0,0.2);
-    background-image: var(--imagem-fundo-escuro); /*utiliza as variáveis definidas no root*/
+    background-image: var(--imagem-fundo-escuro);
 }
 
 body {

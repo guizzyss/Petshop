@@ -7,3 +7,7 @@
     height: fit-content;
     margin: 0 auto; 
 }
+
+.pagina-login .link-alternativo a {
+    color: var(--cor-primaria);
+}

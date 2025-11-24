@@ -6,3 +6,7 @@
     max-width: 600px; /*limita a largura do formulário */
     margin: 0 auto;
 }
+
+.pagina-registro .link-alternativo a {
+    color: var(--cor-primaria);
+}

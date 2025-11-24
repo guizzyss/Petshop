@@ -44,7 +44,7 @@ $nome_usuario = $_SESSION['usuario_nome'] ?? '';
                             Sair (<?php echo htmlspecialchars($nome_usuario); ?>)
                         </a></li>
                     <?php else: ?>
-                        <li><a href="index.php?pagina=login" class="nav-botao">Login</a></li>
+                        <li><a href="index.php?pagina=login" class="nav-botao botao-login">Login</a></li>
                         <li><a href="index.php?pagina=registro" class="nav-botao-outline">Registrar</a></li>
                     <?php endif; ?>
                 </ul>

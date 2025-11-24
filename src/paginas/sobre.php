@@ -32,7 +32,7 @@
         
         <div class="imagem-sobre">
             <div class="placeholder-imagem">
-                [Imagem da equipe ou da loja]
+                <img src="../assets/img/equipe.jpeg" alt="Equipe LePet"/>
             </div>
         </div>
     </div>
