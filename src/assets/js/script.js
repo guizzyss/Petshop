@@ -67,28 +67,23 @@ document.addEventListener('DOMContentLoaded', () => {
         function validarFormRegistro() {
             let formValido = true;
             
-            // Reseta todos os erros antes de validar de novo
             resetarErros();
 
-            // Valida o nome
             if (nome.value.trim() === '') {
                 mostrarErro(nome, 'O campo nome é obrigatório.');
                 formValido = false;
             }
 
-            // Valida o email
             if (!validarEmail(email.value)) {
                 mostrarErro(email, 'Por favor, insira um e-mail válido.');
                 formValido = false;
             }
 
-            // Valida a senha
             if (senha.value.length < 6) {
                 mostrarErro(senha, 'A senha deve ter no mínimo 6 caracteres.');
                 formValido = false;
             }
 
-            // Valida a confirmação de senha
             if (senha.value !== senhaConfirm.value) {
                 mostrarErro(senhaConfirm, 'As senhas não coincidem.');
                 formValido = false;
@@ -114,14 +109,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function resetarErros() {
-            // Remove todas as mensagens de erro
             const spansErro = formRegistro.querySelectorAll('.erro-validacao');
             spansErro.forEach(span => {
                 span.textContent = '';
                 span.style.display = 'none';
             });
 
-            // Remove todas as bordas vermelhas
             const inputs = formRegistro.querySelectorAll('input');
             inputs.forEach(input => {
                 input.classList.remove('invalido');
@@ -129,7 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function validarEmail(email) {
-            // Validação simples de email
             const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(String(email).toLowerCase());
         }

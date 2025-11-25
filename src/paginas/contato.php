@@ -2,7 +2,7 @@
 
 $sucesso = false;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Aqui você pode processar os dados do formulário, como salvar no banco ou enviar um e-mail
+    // Possível nova funcionalidade: salvar os dados em um banco ou enviar a um email
     $sucesso = true;
 }
 ?>

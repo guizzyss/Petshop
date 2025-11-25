@@ -96,6 +96,7 @@ body {
     color: var(--cor-primaria);
 }
 
+
 /*BOTÕES*/
 .botao, .nav-botao, .nav-botao-outline {
     padding: 8px 16px;
@@ -108,18 +109,20 @@ body {
 }
 .botao, .nav-botao {
     background-color: var(--cor-primaria);
-    color: #fff;
+    color: #ffffff;
 }
 .botao:hover, .nav-botao:hover {
     background-color: var(--cor-primaria-hover);
     border-color: var(--cor-primaria-hover);
     color: #fff;
 }
+
 .botao-outline, .nav-botao-outline {
     background-color: transparent;
     color: var(--cor-primaria);
     border-radius: 7px;
 }
+
 .botao-outline:hover, .nav-botao-outline:hover {
     background-color: var(--cor-primaria);
     color: #fff;

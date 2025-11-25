@@ -9,4 +9,5 @@
 
 .pagina-registro .link-alternativo a {
     color: var(--cor-primaria);
+    text-decoration: none;
 }
